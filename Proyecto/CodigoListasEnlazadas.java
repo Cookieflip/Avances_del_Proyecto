@@ -1,7 +1,9 @@
+import javax.swing.JOptionPane;
 public class CodigoListasEnlazadas {
 
     private Nodo head = null;
     public int length = 0;
+    String lista = " ";
 
     public class Nodo{ //Clase interna llamada nodo
         public int data;
@@ -43,13 +45,14 @@ public class CodigoListasEnlazadas {
 
     public void MostrarNodos(){
         Nodo current = head;
-        int contador = 0;
+        //int contador = 0;
         while(current != null){
-            System.out.println("El elemento "+(contador+1)+" del nodo es: "+current.data);
+            lista += current.data + " ";
             current = current.next;
-            contador++;
+            //contador++;
         }
-        
+        JOptionPane.showMessageDialog(null, lista);
+        lista = "";
     }
 
     public void InsertarAlInicio(int valor){ 
